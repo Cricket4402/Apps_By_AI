@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top-Down Graph Shooter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud-left">
+    <div class="hud-box">
+      <div id="health-display">HP: 100 / 100</div>
+      <div id="exp-display">EXP: 0 / 100</div>
+    </div>
+  </div>
+
+  <div id="hud-center">
+    <div class="hud-box">
+      <div id="timer">00:00</div>
+    </div>
+    <div class="hud-box">
+      <div id="formula-row">
+        <span id="formula">f(x) = x</span>
+        <span class="separator">|</span>
+        <span id="x-value">x = 4</span>
+        <span class="separator">|</span>
+        <span id="fx-value">f(x) = 4</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="levelup-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Level Up!</h2>
+      <p>Choose an upgrade:</p>
+      <div id="upgrade-options"></div>
+    </div>
+  </div>
+
+  <div id="gameover-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Game Over</h2>
+      <p id="gameover-stats"></p>
+      <p class="hint">Press R to restart</p>
+    </div>
+  </div>
+
+  <div id="debug-panel" class="hidden">
+    <div class="debug-header">
+      <span>Debug Menu</span>
+      <button id="debug-close" type="button">×</button>
+    </div>
+    <div class="debug-section">
+      <label class="debug-toggle">
+        <input type="checkbox" id="debug-freeze-all"> Freeze everything
+      </label>
+      <label class="debug-toggle">
+        <input type="checkbox" id="debug-freeze-enemies"> Freeze enemies only
+      </label>
+      <label class="debug-toggle">
+        <input type="checkbox" id="debug-invincible"> Player invincibility
+      </label>
+    </div>
+    <div class="debug-section">
+      <label class="debug-field">
+        Spawn interval (sec)
+        <input type="number" id="debug-spawn-rate" min="0.1" max="10" step="0.1" value="1.5">
+      </label>
+      <button type="button" id="debug-apply-spawn" class="debug-btn">Apply spawn rate</button>
+    </div>
+    <div class="debug-section">
+      <p class="debug-label">Player stats</p>
+      <label class="debug-field">
+        Health
+        <input type="number" id="debug-health" min="1" step="1">
+      </label>
+      <label class="debug-field">
+        Max health
+        <input type="number" id="debug-max-health" min="1" step="1">
+      </label>
+      <label class="debug-field">
+        Speed
+        <input type="number" id="debug-speed" min="1" step="10">
+      </label>
+      <label class="debug-field">
+        x value
+        <input type="number" id="debug-x" min="1" step="1">
+      </label>
+      <label class="debug-field">
+        Coefficient
+        <input type="number" id="debug-coefficient" min="1" step="1">
+      </label>
+      <label class="debug-field">
+        Exponent
+        <input type="number" id="debug-exponent" min="1" step="1">
+      </label>
+      <label class="debug-field">
+        Base fire rate (sec)
+        <input type="number" id="debug-fire-rate" min="0.05" step="0.05">
+      </label>
+      <button type="button" id="debug-apply-stats" class="debug-btn">Apply player stats</button>
+    </div>
+    <p class="debug-hint">Press ` to toggle</p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
