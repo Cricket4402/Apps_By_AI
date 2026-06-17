@@ -3,5 +3,5 @@ Collection of AI generated apps courtesy of Claude, just to see how capable they
 
 # project-1-topdown
 ## Approximate generation time: 5-10 minutes
-Just run the index.html locally. Press "=" for debug console. 
+Download the folder, then run index.html. Press "=" for debug console. 
 
